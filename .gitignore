@@ -2,3 +2,4 @@ dist
 out
 build
 webDist
+node_modules
