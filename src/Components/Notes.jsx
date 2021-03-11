@@ -1,7 +1,8 @@
 import React from 'react';
 import { Container, Row, Col, Modal, Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
-
+import StackGrid from "react-stack-grid";
+ 
 import { saveNote, getNotes } from '../Store/actions';
 import './components.css';
 
@@ -68,31 +69,32 @@ class Notes extends React.Component {
   render() {
     return (
       <Container>
-        <Row className='notes-row'>
-          <Col
-            sm={3}
+        <StackGrid
+          className='notes-row'
+          columnWidth={300}
+        >
+          <div
             onClick={this.openCreateNoteModal}
             key='initial'
             className='create-note'
           >
             <i className="plus fas fa-plus-circle"></i>
-          </Col>
+          </div>
           {
             this.props.notes.map(note => {
               return (
-                <Col
-                  sm={3}
+                <div
                   className='note-col'
                   onClick={() => this.onClickNote(note)}
                   key={note.id}
                 >
                   <p className='note-title'>{note.title}</p>
                   <div>{note.text}</div>
-                </Col>
+                </div>
               );
             })
           }
-        </Row>
+        </StackGrid>
         <Modal
           show={this.state.showModal}
           onHide={this.handleCloseModal}

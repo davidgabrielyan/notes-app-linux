@@ -3,3 +3,4 @@ out
 build
 webDist
 node_modules
+package-lock.json
