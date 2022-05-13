@@ -5,7 +5,7 @@
 ```
 git clone https://github.com/Davo1997/MacOS-Notes-for-linux.git
 ```
-2. If you havent already, install Yarn globally.
+2. If you haven't already, install Yarn globally.
 ```
 npm install -g yarn
 ```
